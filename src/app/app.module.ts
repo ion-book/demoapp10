@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthService } from './auth.service';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
@@ -20,6 +21,11 @@ export const firebaseConfig = {
     messagingSenderId: "141181591031"
   };
 
+const routes: Routes = [
+  { path: '', component: HomePageComponent },
+  { path: 'login', component: LoginPageComponent }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +38,8 @@ export const firebaseConfig = {
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
