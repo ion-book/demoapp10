@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { AlertModule } from 'ngx-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AngularFireModule} from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthService } from './auth.service';
 
 import { AppComponent } from './app.component';
@@ -30,7 +31,8 @@ export const firebaseConfig = {
     AlertModule.forRoot(),
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
