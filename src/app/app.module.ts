@@ -8,6 +8,7 @@ import { AuthService } from './auth.service';
 
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 export const firebaseConfig = {
    apiKey: "AIzaSyAbD19sI5Xz_jKjEMCQhjuYXVPrdn3YEsY",
@@ -21,7 +22,8 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
