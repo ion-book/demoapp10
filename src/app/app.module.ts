@@ -4,20 +4,24 @@ import { AlertModule } from 'ngx-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AngularFireModule} from 'angularfire2';
+import { AuthService } from './auth.service';
 
 import { AppComponent } from './app.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 export const firebaseConfig = {
-    apiKey: "<your-key>",
-    authDomain: "<your-project-authdomain>",
-    databaseURL: "<your-database-url>",
-    storageBucket: "<your-storage-bucket>",
-    messagingSenderId: "<your-messaging-sender-id>"
+   apiKey: "AIzaSyAbD19sI5Xz_jKjEMCQhjuYXVPrdn3YEsY",
+    authDomain: "codelab-22299.firebaseapp.com",
+    databaseURL: "https://codelab-22299.firebaseio.com",
+    projectId: "codelab-22299",
+    storageBucket: "codelab-22299.appspot.com",
+    messagingSenderId: "141181591031"
   };
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,7 @@ export const firebaseConfig = {
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
